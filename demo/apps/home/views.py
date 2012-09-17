@@ -1,16 +1,28 @@
 #encoding:utf-8
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-
+from demo.apps.ventas.models import producto
 
 def index_view(request):
 	return render_to_response('home/index.html', context_instance = RequestContext(request))
 
 
 def about_view(request):
-	return render_to_response('home/about.html' , context_instance = RequestContext(request))
+	#vamos a pasar informacino de las vistas al html
+	mensaje = "esto es un mensaje desde mi vista"
 
-# Create your views here.
+	ctx = { 'msg' : mensaje}
+	#generamos un contexto proque django obtiene la informacion y la parsea
+
+	return render_to_response('home/about.html' ,ctx, context_instance = RequestContext(request))
+
+
+def productos_view(request):
+
+	prod  = producto.objects.filter(status=True)   # Select *from ventas where status = True
+	
+	ctx  = { "producto" : prod}						#creamos un contexto y le enviamos el resultado
+	return render_to_response('home/productos.html' ,ctx , context_instance =  RequestContext(request) )
 
 
 #La vista

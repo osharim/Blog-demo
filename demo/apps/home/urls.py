@@ -7,7 +7,9 @@ urlpatterns = patterns('demo.apps.home.views', #prefijos de la vista que queremo
 
 			url(r'^$'       ,  'index_view' ,  name = 'vista_principal') , # r raiz
 
-			url(r'^about/$' ,  'about_view' ,  name = 'vista_about')
+			url(r'^about/$' ,  'about_view' ,  name = 'vista_about') ,
+
+			url(r'^productos/$' , 'productos_view' , name = "vista_productos")
 
 
 			) #cerramos la creacion de las ramas
