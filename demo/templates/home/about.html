@@ -1,16 +1,10 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title>Este es el about de mi pagina</title>
-</head>
-<body>
-	
+{% extends 'base.html' %}
+{% block title%} Este es el about de mi pagina{% endblock%}
+{% block content%}
+
+ 
 <h3>aqui va la descripcion</h3>
 
 <h3>{{ msg }}</h3>
 
-
-
-</body>
-</html>
+ {% endblock %}

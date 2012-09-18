@@ -1,5 +1,5 @@
 from django.db import models
-
+# sudo apt-get install python-mysqldb install on linux
 
 #------------------------------------------------------------------------------------------------------
 """#El modelo define los datos almacenados, se encuentra en forma de clases de Python,

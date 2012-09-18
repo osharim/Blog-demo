@@ -1,3 +1,43 @@
+#encoding:utf-8
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+from demo.apps.ventas.forms import addProductForm
+from demo.apps.ventas.models import producto
+
+def add_product_view(request):
+
+	info = "datos nuevos"
+
+	if request.method == "POST":
+
+		form = addProductForm(request.POST)
+		info = "inicializando"
+
+		if form.is_valid(): #limpiamos los datos y los guardamos
+			nombre = form.cleaned_data["nombre"]
+			descripcion = form.cleaned_data["descripcion"]
+
+			p = producto()
+			p.nombre = nombre
+			p.descripcion = descripcion
+			p.status = True
+			p.save() #Guardamos la informacion en la DB
+
+			info = "Se guardo correctamente los datos"
+
+
+		else: #GET
+
+			info = "informacion con datos incorrectos"
+
+
+	form = addProductForm()
+
+	ctx = {'form' : form , "info" : info }
+
+	return render_to_response ( "ventas/addProduct.html" ,ctx , context_instance = RequestContext(request))
+
+
 #La vista
 
 #La vista se presenta en forma de funciones en Python, su propósito es determinar que datos serán visualizados,

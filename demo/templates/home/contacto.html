@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %} contactanos {% endblock %}
+{% block content%}
+
+ 
+	{% if info_enviado %}
+
+		<p>Gracias por enviar un comentario </p>
+
+		
+		<p>el email fue </p>{{email}}
+		<p> el titulo es</p>{{titulo}}
+		<p>el texto es</p>{{texto}}
+		
+
+	{% else %}
+
+
+		<h2>El campo de contacto</h2>
+
+		<form action="" method="POST">
+			{% csrf_token %}
+			{{ form.as_p }}
+
+			<input type="submit" value="submit">
+		</form>
+
+
+{% endif %}
+
+{% endblock %} 
+
+
+ 

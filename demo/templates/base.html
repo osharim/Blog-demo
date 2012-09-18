@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %} Titulo Base{% endblock %} </title>
+</head>
+<body>
+	
+
+<header>
+
+		<img src="/media/img/django.gif" alt="">
+
+		<h1>Proyecto demo (Venta de productos)</h1>
+	<nav>
+
+	<a href="{% url vista_principal %}">inicio</a>
+	<a href="{% url vista_productos %}">productos</a>
+	<a href="{% url vista_contacto %}">contacto</a>
+	<a href="{% url vista_about %}">Acerca de </a>
+	<a href="{% url vista_agregar_producto %}">Agregar producto</a>
+
+</nav>
+
+
+
+</header>
+
+<section>
+	
+<br>
+<div>--------------------------------------------------------------------------------------</div>
+			{% block content %}
+
+			{% endblock %}
+
+
+</section>
+
+
+</body>
+</html>

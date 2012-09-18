@@ -1,32 +1,23 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
-<head>
-	<meta charset="UTF-8">
-	<title>Vista de productos</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}Vista de productos{% endblock %}
+{% block content %} 
 
-
-<h2>catalogo de productos</h2>
 
 {% if producto %}
 
 		{% for p in producto %}
 
-			<p>{{p.nombre}}</p>
+			<p>Nombre : {{p.nombre}}</p>
+
+			<p>Descripcion : {{p.descripcion}}</p>
 
 		{% endfor %}
 
 
 {% else %}
 
-<h2>No existen productos activos a la venta  </h2>	
+<h2>No existen productos activos a la venta :( </h2>	
 
 {% endif %}
 
-
-
-
-	
-</body>
-</html>
+{% endblock %}
