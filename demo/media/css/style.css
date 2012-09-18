@@ -153,3 +153,37 @@ section{
     width: 909px;
     }
 
+.contact{
+ 
+    float: left;
+    margin-top: 1px;
+    width: 341px;
+}
+
+
+.contact img{
+   border: 1px solid white;
+    border-radius: 5px 5px 5px 5px;
+    float: left;
+}
+
+.contact_data{
+	 float: left;
+    margin-top: 1px;
+    width: 252px;
+}
+
+.contact_data li:first-child{
+
+
+ color: #555555;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.contact_data li{
+
+	color:#777;
+ 	padding: 3px;	
+}
