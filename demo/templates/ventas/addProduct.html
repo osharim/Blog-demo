@@ -2,19 +2,21 @@
 {% block title %}Guardar productos {% endblock %}
 {% block content %}
 
+
+<div class="msg_error"> {{ info }}  </div>
 <form action="" method="POST">
 
 	{% csrf_token %}
 
 {{ form.as_p }}
 	
-<input type="submit" value="grabar">
-<input type="reset">
+<input type="submit" value="Save Product">
+<input type="reset" value="Empty">
 
 </form>		
 
 <br>
 
-{{ info }}
+
 
 {% endblock %}

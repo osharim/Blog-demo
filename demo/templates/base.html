@@ -3,15 +3,19 @@
 <head>
 	<meta charset="UTF-8">
 	<title>{% block title %} Titulo Base{% endblock %} </title>
+
+	{% block style_css%}<link rel="stylesheet" href="/media/css/reset.css">{% endblock style_css%}
+	{% block reset_css%}<link rel="stylesheet" href="/media/css/style.css">{% endblock reset_css%}
+
 </head>
 <body>
 	
 
+
 <header>
 
-		<img src="/media/img/django.gif" alt="">
 
-		<h1>Proyecto demo (Venta de productos)</h1>
+ 	
 	<nav>
 
 	<a href="{% url vista_principal %}">inicio</a>
@@ -26,10 +30,18 @@
 
 </header>
 
+
+	<div class="hoja">
+			<img src="/media/img/django.gif" alt="">.
+			<h1>Proyecto demo (Venta de productos)</h1>
+
+			<div class="path">{% block path %}  Ubicacion  {% endblock path %}  </div>
+
+	</div>
+
 <section>
 	
-<br>
-<div>--------------------------------------------------------------------------------------</div>
+ 
 			{% block content %}
 
 			{% endblock %}
