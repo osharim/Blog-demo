@@ -1,7 +1,7 @@
 # Django settings for demo project.
 import os
  
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -9,7 +9,6 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
-
 
 DATABASES = {
     'default': {
