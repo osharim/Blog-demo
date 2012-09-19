@@ -1,5 +1,4 @@
 from django.db import models
- 
 # sudo apt-get install python-mysqldb install on linux
 
 #------------------------------------------------------------------------------------------------------
@@ -8,7 +7,6 @@ from django.db import models
 #parametros, posee metodos tambien. Todo esto permite indicar y controlar el comportamiento de los datos. """
 
 class cliente(models.Model):  				#hereda de models para modelar la DB
-	project_phase = get_model('core', 'project_phase')
 	nombre  				= models.CharField(max_length=200) 		#char maxima 200 caracteres
 	apellidos				= models.CharField(max_length=200) 
 	status					= models.BooleanField(default=True)	 #tipo-->Bololean campo-->Field
@@ -20,7 +18,6 @@ class cliente(models.Model):  				#hereda de models para modelar la DB
 
 
 class producto(models.Model):
-	project_phase = get_model('core', 'project_phase')
 	nombre 					= models.CharField(max_length=100)
 	descripcion				= models.TextField(max_length=300)
 	status					= models.BooleanField(default=True)
